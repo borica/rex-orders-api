@@ -1,0 +1,42 @@
+Table orders {
+  id UUID pk
+  table_number integer
+  table_size integer
+  status string
+  created_at timestamp
+  update_at timestamp
+}
+
+Table order_items {
+  id UUID pk
+  order_id UUID
+  menu_item_id string
+  observation string
+}
+
+Table menu {
+  id UUID [primary key]
+  title text
+  description text
+  status string
+  created_at timestamp
+  updated_at timestamp
+  deleted_at timestamp
+}
+
+Table menu_item {
+  id UUID [primary key]
+  menu_id UUID
+  title text
+  description text
+  status string
+  portion_size number
+  prep_time_mins number
+  created_at timestamp
+  updated_at timestamp
+  deleted_at timestamp
+}
+
+Ref: orders.id < order_items.order_id
+Ref: order_items.menu_item_id - menu_item.id
+Ref: menu.id < menu_item.menu_id
