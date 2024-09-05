@@ -29,7 +29,6 @@ use Illuminate\Support\Carbon;
  * @method static Builder|OrderItem whereOrderId($value)
  * @method static Builder|OrderItem whereQuantity($value)
  * @method static Builder|OrderItem whereUpdatedAt($value)
- * @mixin \Eloquent
  */
 class OrderItem extends Model
 {

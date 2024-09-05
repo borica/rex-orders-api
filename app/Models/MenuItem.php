@@ -44,7 +44,6 @@ use Illuminate\Support\Carbon;
  * @method static Builder|MenuItem whereUpdatedAt($value)
  * @method static Builder|MenuItem withTrashed()
  * @method static Builder|MenuItem withoutTrashed()
- * @mixin \Eloquent
  */
 class MenuItem extends Model
 {

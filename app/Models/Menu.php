@@ -33,7 +33,6 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Menu whereUpdatedAt($value)
  * @method static Builder|Menu withTrashed()
  * @method static Builder|Menu withoutTrashed()
- * @mixin Eloquent
  */
 class Menu extends Model
 {
