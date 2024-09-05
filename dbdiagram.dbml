@@ -1,7 +1,6 @@
 Table orders {
   id UUID pk
   table_number integer
-  table_size integer
   status string
   created_at timestamp
   update_at timestamp
@@ -11,32 +10,34 @@ Table order_items {
   id UUID pk
   order_id UUID
   menu_item_id string
+  quantity integer
   observation string
 }
 
-Table menu {
+Table menus {
   id UUID [primary key]
   title text
   description text
-  status string
   created_at timestamp
   updated_at timestamp
   deleted_at timestamp
 }
 
-Table menu_item {
+Table menu_items {
   id UUID [primary key]
   menu_id UUID
   title text
   description text
-  status string
-  portion_size number
+  image_url text
+  price float
   prep_time_mins number
+  portion_size number
+  disabled boolean
   created_at timestamp
   updated_at timestamp
   deleted_at timestamp
 }
 
 Ref: orders.id < order_items.order_id
-Ref: order_items.menu_item_id - menu_item.id
-Ref: menu.id < menu_item.menu_id
+Ref: order_items.menu_item_id - menu_items.id
+Ref: menus.id < menu_items.menu_id
