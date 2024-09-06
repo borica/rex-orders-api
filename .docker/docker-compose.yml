@@ -30,4 +30,5 @@ services:
 
 networks:
   rex-orders-network:
+    name: rexOrdersNetwork
     driver: bridge

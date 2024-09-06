@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\UUID;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -36,7 +37,7 @@ use Illuminate\Support\Carbon;
  */
 class Menu extends Model
 {
-    use HasFactory, SoftDeletes;
+    use HasFactory, SoftDeletes, UUID;
 
     protected $fillable = [
         'title',
