@@ -2,7 +2,7 @@ services:
   rex-orders-api:
     container_name: rexOrdersApi
     build:
-      context: ..
+      context: .
       dockerfile: Dockerfile
     volumes:
       - ../.:/var/www/html
