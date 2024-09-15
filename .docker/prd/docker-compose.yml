@@ -1,0 +1,32 @@
+services:
+  rex-orders-api:
+    container_name: rexOrdersApi
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    volumes:
+      - ../.:/var/www/html
+    ports:
+      - '80:80'
+    networks:
+      - rex-orders-network
+    depends_on:
+      - rex-orders-database
+
+  rex-orders-database:
+    container_name: rexOrdersDatabase
+    image: 'postgres:15'
+    ports:
+      - '5432:5432'
+    environment:
+      PGPASSWORD: 'test'
+      POSTGRES_DB: 'test'
+      POSTGRES_USER: 'test'
+      POSTGRES_PASSWORD: 'test'
+    networks:
+      - rex-orders-network
+
+networks:
+  rex-orders-network:
+    name: rexOrdersNetwork
+    driver: bridge
