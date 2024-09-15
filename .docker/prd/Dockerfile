@@ -13,7 +13,6 @@ RUN apt update && \
     apt install -y libpq-dev zip && \
     docker-php-ext-install pdo_pgsql && \
     a2enmod rewrite && \
-    docker-php-ext-enable xdebug && \
     pecl install redis-6.0.2 && \
     docker-php-ext-enable redis && \
     php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" && \
